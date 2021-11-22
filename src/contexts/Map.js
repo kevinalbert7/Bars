@@ -10,7 +10,7 @@ const MapContextProvider = props => {
 
     const value = {
         location,
-        bars
+        bars,
     }
 
     useEffect(() => {

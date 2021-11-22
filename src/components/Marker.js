@@ -1,4 +1,4 @@
-import React from "react"
+import React, { useState } from "react"
 import styled from "styled-components"
 
 import { FaMapMarkerAlt } from 'react-icons/fa'
@@ -8,18 +8,22 @@ const MarkerContainer = styled.div`
   height: 40px;
   position: relative;
 `
+const Marker = props => {
+    const { infoWindow, setInfoWindow} = useState(false)
 
-const Marker = () => {
     return (
-        <MarkerContainer>
+        <MarkerContainer 
+        onMouseEnter={() => setInfoWindow(true)}
+        onMouseOut={() => setInfoWindow(false)}
+        >
             <FaMapMarkerAlt style={{ 
                 width: '40px', 
                 height: '40px', 
                 color: "red", 
                 position: "absolute", 
                 bottom: '100%', 
-                left: '-20px' }} 
-            />
+                left: '-20px' 
+            }} />
         </MarkerContainer>
     )
 }

@@ -6,16 +6,18 @@ import GoogleMapReact from "google-map-react"
 import { useContext } from "react"
 import { MapContext } from "../contexts/Map"
 
-
-
 const MapDiv = styled.div`
     height: 100vh;
     width: 100%
 `
 
+// Marker.addListener('mouseover', () => infoWindow.open(map, marker))
+// Marker.addListener('mouseout', () => infoWindow.close())
+
 
 const Map = () => {
     const { location, bars } = useContext(MapContext)
+    
     if (!location) {
         return <p>Chargement en cours...</p>
     }
@@ -30,19 +32,18 @@ const Map = () => {
             <Marker
                 // lat={location.lat}
                 // lng={location.lng}
-                // bar={bars.json}
             />
             {bars.map( element =>
             <Marker
                 key={element.id}
                 name={element.name}
                 lat={element.latitude}
-                lng={element.longitude}  
-            />  
+                lng={element.longitude}
+            /> 
             )}
             </GoogleMapReact>
         </MapDiv>
-        )
+    )
 }
 
 export default Map
