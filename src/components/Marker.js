@@ -1,8 +1,7 @@
 import React from "react"
+import styled from "styled-components"
 
 import { FaMapMarkerAlt } from 'react-icons/fa'
-
-import styled from "styled-components"
 
 const MarkerContainer = styled.div`
   width: 40px;

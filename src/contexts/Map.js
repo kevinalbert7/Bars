@@ -1,5 +1,6 @@
-import React, { createContext, useState, useEffect } from "react"
 import barsLocation from '../bars.json'
+
+import React, { createContext, useState, useEffect } from "react"
 
 const MapContext = createContext ({})
 
@@ -20,9 +21,9 @@ const MapContextProvider = props => {
                     lat: position.coords.latitude,
                     lng: position.coords.longitude
                 })
-                console.log("location.coords: ", position.coords)
+                // console.log("location.coords: ", position.coords)
             }, (error) => {
-                console.error("error:", error);
+                // console.error("error:", error);
               })
     }, [])
 

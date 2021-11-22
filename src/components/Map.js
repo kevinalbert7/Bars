@@ -1,10 +1,11 @@
 import React from "react"
 import styled from "styled-components"
 import Marker from "./Marker"
+import GoogleMapReact from "google-map-react"
+
 import { useContext } from "react"
 import { MapContext } from "../contexts/Map"
 
-import GoogleMapReact from "google-map-react"
 
 
 const MapDiv = styled.div`
@@ -12,12 +13,13 @@ const MapDiv = styled.div`
     width: 100%
 `
 
+
 const Map = () => {
     const { location, bars } = useContext(MapContext)
     if (!location) {
         return <p>Chargement en cours...</p>
     }
-    console.log("location:", location)
+    // console.log("location:", location)
     return (
         <MapDiv>
             <GoogleMapReact
