@@ -1,14 +1,27 @@
 import React from "react"
 
+import { FaMapMarkerAlt } from 'react-icons/fa'
+
 import styled from "styled-components"
 
-const Img = styled.img`
-    width: '40px'
+const MarkerContainer = styled.div`
+  width: 40px;
+  height: 40px;
+  position: relative;
 `
 
 const Marker = () => {
     return (
-        <Img src="https://cdn-icons.flaticon.com/png/512/3082/premium/3082383.png?token=exp=1637591240~hmac=8c9443383f8aaa4c91c9a8e32cc4ec37"/>
+        <MarkerContainer>
+            <FaMapMarkerAlt style={{ 
+                width: '40px', 
+                height: '40px', 
+                color: "red", 
+                position: "absolute", 
+                bottom: '100%', 
+                left: '-20px' }} 
+            />
+        </MarkerContainer>
     )
 }
 

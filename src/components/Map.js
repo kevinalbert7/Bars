@@ -13,7 +13,7 @@ const MapDiv = styled.div`
 `
 
 const Map = () => {
-    const { location } = useContext(MapContext)
+    const { location, bars } = useContext(MapContext)
     if (!location) {
         return <p>Chargement en cours...</p>
     }
@@ -26,9 +26,18 @@ const Map = () => {
                 defaultZoom={11}
             >
             <Marker
-                lat={location.lat}
-                lng={location.lng}
+                // lat={location.lat}
+                // lng={location.lng}
+                // bar={bars.json}
             />
+            {bars.map( element =>
+            <Marker
+                key={element.id}
+                name={element.name}
+                lat={element.latitude}
+                lng={element.longitude}  
+            />  
+            )}
             </GoogleMapReact>
         </MapDiv>
         )
